@@ -1,30 +1,63 @@
 import "./app.css";
-import { FiMoon } from "react-icons/fi";
-import { RiSunFill } from "react-icons/ri";
 import { useState } from "react";
 
 function App() {
   const [isDarkModeActive, setIsDarkModeActive] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+  });
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+  });
+  const { email, name } = data;
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setInput({ ...input, [name]: value });
+  };
+
+  const setNameEmail = (e) => {
+    e.preventDefault();
+    setData(input);
+    setInput({
+      name: "",
+      email: "",
+    });
+  };
   const toogleMode = () => {
     setIsDarkModeActive(!isDarkModeActive);
   };
+
   return (
     <div
       className={isDarkModeActive ? "appContainer darkMode" : "appContainer"}
     >
       <div className="mainContainer">
         <div className="headerApp">
-          <h1>Dark Mode Challenge</h1>
+          <div>
+            <h1>Dark Mode Challenge</h1>
+            <div className="userData">
+              {name && (
+                <p>
+                  Writed by: <b>{name}</b>
+                </p>
+              )}
+              {email && (
+                <p>
+                  Email: <b>{email}</b>
+                </p>
+              )}
+            </div>
+          </div>
           {isDarkModeActive ? (
-            // <RiSunFill className="icon sun" onClick={toogleMode} />
             <img
               src={"../assets/sun.png"}
               className="icon sun"
               onClick={toogleMode}
             />
           ) : (
-            // <FiMoon className="icon moon" onClick={toogleMode} />
             <img
               src={"../assets/moon.png"}
               className="icon"
@@ -56,24 +89,34 @@ function App() {
             turpis erat gravida nisl, nec malesuada massa augue quis nibh.
           </p>
         </div>
-        <div className="inputsContainer">
+        {/* <div className="inputsContainer"> */}
+        <form className="inputsContainer" onSubmit={setNameEmail}>
           <input
             placeholder="name"
             className={
               isDarkModeActive ? "input inputDark" : "input inputLight"
             }
+            name="name"
+            value={input.name}
+            onChange={handleChange}
           />
           <input
             placeholder="email"
             className={
               isDarkModeActive ? "input inputDark" : "input inputLight"
             }
+            name="email"
+            onChange={handleChange}
+            value={input.email}
           />
           <div className="btnContainer">
-            <button className="btn btnSave">save</button>
+            <button className="btn btnSave" type="submit">
+              save
+            </button>
             <button className="btn btnExit">exit</button>
           </div>
-        </div>
+        </form>
+        {/* </div> */}
       </div>
     </div>
   );

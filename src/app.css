@@ -32,6 +32,14 @@ p {
   justify-content: space-between;
   align-items: center;
 }
+.headerApp h1 {
+  margin-bottom: 5px;
+}
+.userData p {
+  margin: 0;
+  font-size: medium;
+  color: gray;
+}
 .contentApp {
   display: grid;
   grid-template-columns: 1fr 1fr;
