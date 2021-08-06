@@ -40,12 +40,20 @@ function App() {
             <h1>Dark Mode Challenge</h1>
             <div className="userData">
               {name && (
-                <p>
+                <p
+                  className={
+                    isDarkModeActive ? "userData userDataDark" : "userData"
+                  }
+                >
                   Writed by: <b>{name}</b>
                 </p>
               )}
               {email && (
-                <p>
+                <p
+                  className={
+                    isDarkModeActive ? "userData userDataDark" : "userData"
+                  }
+                >
                   Email: <b>{email}</b>
                 </p>
               )}
@@ -89,7 +97,6 @@ function App() {
             turpis erat gravida nisl, nec malesuada massa augue quis nibh.
           </p>
         </div>
-        {/* <div className="inputsContainer"> */}
         <form className="inputsContainer" onSubmit={setNameEmail}>
           <input
             placeholder="name"
@@ -116,7 +123,6 @@ function App() {
             <button className="btn btnExit">exit</button>
           </div>
         </form>
-        {/* </div> */}
       </div>
     </div>
   );
