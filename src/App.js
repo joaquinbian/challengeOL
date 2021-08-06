@@ -17,9 +17,19 @@ function App() {
         <div className="headerApp">
           <h1>Dark Mode Challenge</h1>
           {isDarkModeActive ? (
-            <RiSunFill className="icon sun" onClick={toogleMode} />
+            // <RiSunFill className="icon sun" onClick={toogleMode} />
+            <img
+              src={"../assets/sun.png"}
+              className="icon sun"
+              onClick={toogleMode}
+            />
           ) : (
-            <FiMoon className="icon moon" onClick={toogleMode} />
+            // <FiMoon className="icon moon" onClick={toogleMode} />
+            <img
+              src={"../assets/moon.png"}
+              className="icon moon"
+              onClick={toogleMode}
+            />
           )}
         </div>
         <div className="contentApp">
