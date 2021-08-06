@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
+body {
+  margin: 0;
+}
 .appContainer {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   background-color: #ccc;
-  margin-left: 0px;
 }
 .darkMode {
   background-color: #544e4e;
