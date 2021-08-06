@@ -3,16 +3,6 @@
 body {
   margin: 0;
 }
-.appContainer {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  background-color: #ccc;
-}
-.darkMode {
-  background-color: #544e4e;
-  color: white;
-}
 h1 {
   font-size: 2.5em;
 }
@@ -23,6 +13,19 @@ p {
 h1,
 p {
   font-family: "Roboto";
+}
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+}
+.darkMode {
+  background-color: #544e4e;
+  color: white;
+}
+.mainContainer {
+  width: 80%;
 }
 .headerApp {
   display: flex;
@@ -57,9 +60,6 @@ p {
 }
 .btnExit {
   background-color: #ff9699;
-}
-.mainContainer {
-  width: 90%;
 }
 .icon {
   height: 40px;

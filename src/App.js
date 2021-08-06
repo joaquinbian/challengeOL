@@ -27,7 +27,7 @@ function App() {
             // <FiMoon className="icon moon" onClick={toogleMode} />
             <img
               src={"../assets/moon.png"}
-              className="icon moon"
+              className="icon"
               onClick={toogleMode}
             />
           )}
